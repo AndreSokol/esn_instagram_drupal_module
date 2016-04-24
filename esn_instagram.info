@@ -1,0 +1,9 @@
+name = ESN Instagram
+description = Widget for Instagram account exclusively for Erasmus Student Network, HSE Russia department
+core = 7.x
+
+; Add a style sheet for all media
+stylesheets[all][] = esn_instagram.css
+
+; NEW LINE
+configure = admin/config/content/esn_instagram

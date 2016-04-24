@@ -1,0 +1,68 @@
+div.esn_instagram_container {
+	width: 280px;
+	border-style: solid;
+	border-radius: 3px;
+	border-width: 1px;
+	border-color: #3f729b;
+}
+
+div.esn_instagram_container > div.esn_instagram_header {
+	width: 100%;
+	height: 50px;
+	background-color: #3f729b;
+	text-align: center;
+	vertical-align: center;
+	color: white;
+	font-size: 24pt;
+	font-family: 'Grand Hotel';
+	padding-top: 15px;
+}
+
+div.esn_instagram_container > div.esn_instagram_userinfo {
+	width: 100%;
+	display: inline-flex;
+	border-bottom: solid 1px;
+}
+
+div.esn_instagram_container > div.esn_instagram_userinfo > div {
+	width: 60px;
+	color: #888;
+	text-align: center;
+	padding-top: 10px;
+}
+
+div.esn_instagram_container > div.esn_instagram_userinfo > div:last-of-type {
+	width: 110px;
+}
+
+div.esn_instagram_container > div.esn_instagram_userinfo > div > a.esn_instagram_follow_button {
+	color: white!important;
+	height: 30px;
+	display: block;
+	margin: 5px 10px;
+	font-size: 12pt;
+	background-color: #3f729b;
+	border-radius: 5px;
+	padding-top: 3px;
+}
+
+div.esn_instagram_container > div.esn_instagram_userinfo > div > p.esn_instagram_cnt {
+	font-size: 16pt;
+}
+
+div.esn_instagram_container > div.esn_instagram_userinfo > div > p.esn_instagram_cnt_type {
+	margin: 0px 0px 5px 0px;
+	font-size: 8pt;
+}
+
+div.esn_instagram_container > div.esn_instagram_img_container {
+	width: 100%;
+	padding-right: 9px;
+	padding-bottom: 9px;
+}
+
+div.esn_instagram_container > div.esn_instagram_img_container > a > img {
+	width: 80px;
+	margin-left: 9px;
+	margin-top: 9px;
+}
