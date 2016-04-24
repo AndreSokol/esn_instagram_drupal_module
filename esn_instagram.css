@@ -1,9 +1,10 @@
 div.esn_instagram_container {
 	width: 280px;
-	border-style: solid;
+	/*border-style: solid;
 	border-radius: 3px;
 	border-width: 1px;
-	border-color: #3f729b;
+	border-color: #3f729b;*/
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 div.esn_instagram_container > div.esn_instagram_header {
@@ -21,7 +22,7 @@ div.esn_instagram_container > div.esn_instagram_header {
 div.esn_instagram_container > div.esn_instagram_userinfo {
 	width: 100%;
 	display: inline-flex;
-	border-bottom: solid 1px;
+	border-bottom: solid 1px rgba(63, 114, 155, 0.3);
 }
 
 div.esn_instagram_container > div.esn_instagram_userinfo > div {
@@ -44,6 +45,12 @@ div.esn_instagram_container > div.esn_instagram_userinfo > div > a.esn_instagram
 	background-color: #3f729b;
 	border-radius: 5px;
 	padding-top: 3px;
+	font-weight: bold;
+}
+
+div.esn_instagram_container > div.esn_instagram_userinfo > div > a.esn_instagram_follow_button:hover {
+	background-color: #233e54;
+	text-decoration: none;
 }
 
 div.esn_instagram_container > div.esn_instagram_userinfo > div > p.esn_instagram_cnt {
