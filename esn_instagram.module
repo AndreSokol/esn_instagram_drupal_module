@@ -157,7 +157,7 @@ function esn_instagram_cron() {
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $data = curl_exec($ch);
     curl_close($ch);
-    watchdog('esn_instagram', 'requested data from @url, response length: @len', array('@url' => $url, '@len' => strlen($data)), WATCHDOG_INFO);
+    watchdog('esn_instagram', 'requested data from @url, response length: @len, response: @res', array('@url' => $url, '@len' => strlen($data), '@res' => $data), WATCHDOG_INFO);
     $data = json_decode($data, true);
 
     $url = 'https://api.instagram.com/v1/users/self/?access_token=' . $access_key;
@@ -173,7 +173,7 @@ function esn_instagram_cron() {
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $data2 = curl_exec($ch);
     curl_close($ch);
-    watchdog('esn_instagram', 'requested data from @url, response length: @len', array('@url' => $url, '@len' => strlen($data2)), WATCHDOG_INFO);
+    watchdog('esn_instagram', 'requested data from @url, response length: @len, response: @res', array('@url' => $url, '@len' => strlen($data2), '@res' => $data2), WATCHDOG_INFO);
     $data2 = json_decode($data2, true);
 
 
