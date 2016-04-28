@@ -97,7 +97,10 @@ function esn_instagram_contents($data) {
     $code = '<link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet" type="text/css">
     <div class="esn_instagram_container">
         <div class="esn_instagram_header">Follow us on Instagram</div>
-        <div class="esn_instagram_userinfo">';
+        <div class="esn_instagram_userpic_container">';
+    $code .= '<div class="esn_instagram_userpic"><img src="' . $data['userpic'] .
+                     '"></div><p class="esn_instagram_fullname">' .
+                     $data['fullname'] . '</p></div><div class="esn_instagram_userinfo">';
     $code .= '<div><p class="esn_instagram_cnt">' . $data['media'] . '</p>'. 
                 '<p class="esn_instagram_cnt_type">posts</p></div>';
     $code .= '<div><p class="esn_instagram_cnt">' . $data['followers'] . '</p>'. 
@@ -142,8 +145,6 @@ function esn_instagram_cron() {
         return;
     }
 
-    
-
     $url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' . $access_key;
     $ch = curl_init();
     $timeout = 5;
@@ -176,9 +177,6 @@ function esn_instagram_cron() {
     watchdog('esn_instagram', 'requested data from @url, response length: @len, response: @res', array('@url' => $url, '@len' => strlen($data2), '@res' => $data2), WATCHDOG_INFO);
     $data2 = json_decode($data2, true);
 
-
-    
-
     $images = array();
     $links = array();
     
@@ -196,14 +194,19 @@ function esn_instagram_cron() {
     $media = 0;
     $followers = 0;
     $follows = 0;
+    $userpic = '';
+    $fullname = '';
+
 
     if ($data2['meta']['code'] == 200) {
         $media = $data2['data']['counts']['media'];
         $followers = $data2['data']['counts']['followed_by'];
         $follows = $data2['data']['counts']['follows'];
+        $userpic = $data2['data']['profile_picture'];
+        $fullname = $data2['data']['full_name'];
     } else {
         watchdog('esn_instagram', 'answer code to info request is not 200 - "!meta"', array('!meta' => $data2['meta']), WATCHDOG_ERROR);
     }
     
-    $_SESSION['esn_instagram_data'] = array('imgurls' => $images, 'links' => $links, 'media' => $media, 'followers' => $followers, 'follows' => $follows);
+    $_SESSION['esn_instagram_data'] = array('imgurls' => $images, 'links' => $links, 'media' => $media, 'followers' => $followers, 'follows' => $follows, 'userpic' => $userpic, 'fullname' => $fullname);
 }
