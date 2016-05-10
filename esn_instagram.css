@@ -83,7 +83,7 @@ div.esn_instagram_container > div.esn_instagram_userpic_container {
 
 div.esn_instagram_userpic {
 	width: 50px;
-	height: 50px;
+	/*height: 50px;*/
 	padding: 5px;
 	border-right: solid 1px rgba(63,114,155,0.3);
 }
@@ -95,9 +95,9 @@ div.esn_instagram_userpic > img {
 div.esn_instagram_userpic_container > p {
 	font-weight: bold;
 	margin: 0px!important;
-	padding: 14px 5px 0px 5px;
+	padding: 10px 5px 0px 5px;
 	width: 100%;
-	font-size: 16pt;
+	font-size: 12pt;
 	color: #666;
 	text-align: center;
 }
